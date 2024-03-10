@@ -1,0 +1,8 @@
+package atributosEscola;
+
+static class dadosEscola {
+	String nome =;
+	int idade;
+	int prova1;
+	int prova2;
+}

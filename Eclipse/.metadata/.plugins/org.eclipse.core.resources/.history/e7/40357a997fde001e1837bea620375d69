@@ -1,0 +1,16 @@
+
+public class main {
+
+	public static void main(String[] args) {
+		Escola escola = new Escola("Julia" , 21 , 2, 1);
+		
+		System.out.println("Escola Paroquial nossa senhora de gertrudes");
+		
+		System.out.println("Nome : " + escola.getNome());
+		System.out.println("idade : " + escola.getIdade());
+		System.out.println("nota1 : " + escola.getProva1());
+		System.out.println("nota2 : " + escola.getProva2());
+		System.out.println("Média final : " + escola.media(escola.prova1, escola.prova2));
+	}
+
+}

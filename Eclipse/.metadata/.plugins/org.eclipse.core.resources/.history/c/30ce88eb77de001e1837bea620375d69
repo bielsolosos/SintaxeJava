@@ -1,0 +1,9 @@
+package atributosEscola;
+
+public class Play {
+
+	public static void main(String[] args) {
+		System.out.println("Olá Gabriel bem vindo de volta ao Eclipse");
+	}
+
+}
