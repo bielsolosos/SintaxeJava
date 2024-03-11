@@ -7,8 +7,8 @@ public class Main {
 		Scanner Scan = new Scanner(System.in);
 		
 		Dados_Banco Banco;
-		int Numero;
-		String Nome , Verifica;
+		int Numero, Verifica;
+		String Nome;
 		Double Deposito;
 		
 		System.out.println("Entre o Número da Conta: ");
@@ -18,13 +18,13 @@ public class Main {
 		Nome = Scan.next();
 	
 		
-
-		System.out.println("Haverá depósito inicial? (s/n)");
-		Verifica = Scan.next();
+		do {
+		System.out.println("Haverá depósito inicial? (Digite 1 para sim e 2 para Não)");
+		Verifica = Scan.nextInt();
+		}while(Verifica != 1 && Verifica != 2);
 		
 		
-		
-		if(Verifica == "s") {
+		if(Verifica == 1) {
 			System.out.println("Insira seu Depósito incial");
 			Deposito = Scan.nextDouble();
 			Banco = new Dados_Banco(Numero, Nome, Deposito );
@@ -33,8 +33,19 @@ public class Main {
 		else {
 			Banco = new Dados_Banco(Numero, Nome);
 		}
-		//Utilizar o Modo Debug do Java no Eclipse e descobrir como fazer essa verificação
-		Banco.MostrarSaldo();
+		Banco.MostrarSaldo(1);
+		
+		
+		System.out.println("Entre um valor para depósito:");
+		Deposito = Scan.nextDouble();
+		Banco.Deposito(Deposito);
+		Banco.MostrarSaldo(0);
+		
+		
+		System.out.println("Entre um valor para Saque:");
+		Deposito = Scan.nextDouble();
+		Banco.Saque(Deposito);
+		Banco.MostrarSaldo(0);
 	}
 
 }

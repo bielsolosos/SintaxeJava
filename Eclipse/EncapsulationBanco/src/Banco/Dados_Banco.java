@@ -22,11 +22,11 @@ public class Dados_Banco {
 		this.Saldo = this.Saldo + deposito;
 	}
 	
-	public void RemoverSaldo(double deposito) {
-		this.Saldo = this.Saldo - deposito;
+	public void Saque(double deposito) {
+		this.Saldo = (this.Saldo - deposito) - 5.0;
 	}
 	
-	public double getTitular() {
+	public int getTitular() {
 		return Titular;
 	}
 	
@@ -43,8 +43,15 @@ public class Dados_Banco {
 	}
 	
 	
-	
-	public void MostrarSaldo() {
-		System.out.println("Conta: " + getTitular() + " Titular: " + getNome() + " Saldo: $" + getSaldo() );
+	//Esse método afim de facilitar qual tipo de mensagem ele printa eu coloquei esse argumento em que se for 1 printa os dados
+	//Qualquer outro método ele aceita dboas
+	public void MostrarSaldo(int Verifica) {
+		if(Verifica == 1) {
+			System.out.println("Dados da Conta:");
+		}
+		else if (Verifica != 1){
+			System.out.println("Dados da Conta atualizados:");
+		}
+			System.out.println("\nConta: " + getTitular() + ", Titular: " + getNome() + ", Saldo: $" + getSaldo() + "\n\n" );
 	}
 }
